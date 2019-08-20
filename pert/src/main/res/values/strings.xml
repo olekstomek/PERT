@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">PERT</string>
+    <string name="optimistic_time">Optimistic time</string>
+    <string name="normal_time">Normal time</string>
+    <string name="pessimistic_time">Pessimistic time</string>
+    <string name="enter_hours">Enter hours</string>
+    <string name="calculate_estimate">Calculate estimate</string>
+    <string name="remember_the_result_to_calculate_the_standard_deviation_of_the_entire_task_sequence_when_calculating_multiple_tasks">
+        Remember the result to calculate the standard deviation of the entire task sequence (when calculating multiple
+        tasks)
+    </string>
+    <string name="number_of_saved_tasks">Number of saved tasks</string>
+    <string name="remove_last_task_from_memory">Remove last task from memory</string>
+    <string name="remove_all_tasks_from_memory">Remove all tasks from memory</string>
 </resources>

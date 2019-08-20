@@ -38,7 +38,7 @@
             android:id="@+id/optimisticTimeInput"
             android:hint="@string/enter_hours"
             app:layout_constraintBottom_toBottomOf="@+id/optimisticTimeText" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp" android:autofillHints="" tools:targetApi="o"/>
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp" android:autofillHints=""/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
             android:id="@+id/normalTimeInput"
             android:hint="@string/enter_hours"
             app:layout_constraintBottom_toBottomOf="@+id/normalTimeText" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp" android:autofillHints="" tools:targetApi="o"/>
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp" android:autofillHints=""/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,7 +56,7 @@
             android:id="@+id/pessimisticTimeInput"
             android:hint="@string/enter_hours"
             app:layout_constraintBottom_toBottomOf="@+id/pessimisticTimeText" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp" android:autofillHints="" tools:targetApi="o"/>
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp" android:autofillHints=""/>
     <Button
             android:text="@string/calculate_estimate"
             android:layout_width="0dp"

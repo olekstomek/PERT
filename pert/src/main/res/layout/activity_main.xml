@@ -30,42 +30,67 @@
             app:layout_constraintEnd_toEndOf="@+id/normalTimeText" app:layout_constraintHorizontal_bias="1.0"
             android:layout_marginTop="64dp" app:layout_constraintTop_toBottomOf="@+id/normalTimeText"
             android:layout_marginLeft="24dp" android:layout_marginStart="24dp"/>
+
     <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
             android:id="@+id/optimisticTimeInput"
-            android:hint="@string/enter_hours"
-            app:layout_constraintBottom_toBottomOf="@+id/optimisticTimeText" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp" android:autofillHints="" tools:targetApi="o"/>
-    <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:autofillHints=""
             android:ems="10"
+            android:hint="@string/enter_hours"
+            android:inputType="number|numberDecimal"
+            android:maxLength="6"
+            app:layout_constraintBottom_toBottomOf="@+id/optimisticTimeText"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:targetApi="o" />
+
+    <EditText
             android:id="@+id/normalTimeInput"
-            android:hint="@string/enter_hours"
-            app:layout_constraintBottom_toBottomOf="@+id/normalTimeText" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp" android:autofillHints="" tools:targetApi="o"/>
-    <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:autofillHints=""
             android:ems="10"
-            android:id="@+id/pessimisticTimeInput"
             android:hint="@string/enter_hours"
-            app:layout_constraintBottom_toBottomOf="@+id/pessimisticTimeText" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp" android:autofillHints="" tools:targetApi="o"/>
+            android:inputType="number|numberDecimal"
+            android:maxLength="6"
+            app:layout_constraintBottom_toBottomOf="@+id/normalTimeText"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:targetApi="o" />
+
+    <EditText
+            android:id="@+id/pessimisticTimeInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/enter_hours"
+            android:inputType="number|numberDecimal"
+            android:maxLength="6"
+            app:layout_constraintBottom_toBottomOf="@+id/pessimisticTimeText"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:targetApi="o" />
+
     <Button
-            android:text="@string/calculate_estimate"
+            android:id="@+id/calculateButton"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/calculateButton"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:layout_marginBottom="84dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.0"/>
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="84dp"
+            android:text="@string/calculate_estimate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
     <Switch
             android:text="@string/remember_the_result_to_calculate_the_standard_deviation_of_the_entire_task_sequence_when_calculating_multiple_tasks"
             android:layout_width="337dp"
@@ -81,21 +106,26 @@
             app:layout_constraintStart_toStartOf="@+id/rememberResultSwitch"
             app:layout_constraintEnd_toEndOf="@+id/rememberResultSwitch" android:id="@+id/numberOfSavedTasksText"
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/rememberResultSwitch"/>
+
     <Button
-            android:text="@string/remove_last_task_from_memory"
+            android:id="@+id/removeLastTaskFromMemoryButton"
             android:layout_width="169dp"
             android:layout_height="63dp"
-            android:id="@+id/removeLastTaskFromMemoryButton" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/calculateButton"/>
+            android:layout_marginTop="8dp"
+            android:text="@string/remove_last_task_from_memory"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calculateButton" />
+
     <Button
-            android:text="@string/remove_all_tasks_from_memory"
+            android:id="@+id/removeAllTasksFromMemory"
             android:layout_width="169dp"
             android:layout_height="63dp"
-            android:id="@+id/removeAllTasksFromMemory" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/calculateButton"
-    />
+            android:layout_marginRight="8dp"
+            android:text="@string/remove_all_tasks_from_memory"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calculateButton" />
 </android.support.constraint.ConstraintLayout>

@@ -84,9 +84,7 @@ class MainActivity : AppCompatActivity() {
             )
             return true
         }
-
         return super.onOptionsItemSelected(item)
-
     }
 
     private fun compareValuesInInput(probability: Probability): Triple<Boolean, Boolean, Boolean> {

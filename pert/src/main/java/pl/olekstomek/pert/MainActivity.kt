@@ -229,21 +229,29 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getValuesFromInput(probability: Probability) {
-        val canNotBeEmpty = "Can not be empty"
-        if (optimisticTimeInput.text.isEmpty()) {
-            optimisticTimeInput.error = canNotBeEmpty
-        } else {
-            probability.optimisticTime = optimisticTimeInput.text.toString().toDouble()
-        }
-        if (normalTimeInput.text.isEmpty()) {
-            normalTimeInput.error = canNotBeEmpty
-        } else {
-            probability.normalTime = normalTimeInput.text.toString().toDouble()
-        }
-        if (pessimisticTimeInput.text.isEmpty()) {
-            pessimisticTimeInput.error = canNotBeEmpty
-        } else {
-            probability.pessimisticTime = pessimisticTimeInput.text.toString().toDouble()
+        val canNotBeEmpty = getString(R.string.canNotBeEmpty)
+        try {
+            if (optimisticTimeInput.text.isEmpty()) {
+                optimisticTimeInput.error = canNotBeEmpty
+            } else {
+                probability.optimisticTime = optimisticTimeInput.text.toString().toDouble()
+            }
+            if (normalTimeInput.text.isEmpty()) {
+                normalTimeInput.error = canNotBeEmpty
+            } else {
+                probability.normalTime = normalTimeInput.text.toString().toDouble()
+            }
+            if (pessimisticTimeInput.text.isEmpty()) {
+                pessimisticTimeInput.error = canNotBeEmpty
+            } else {
+                probability.pessimisticTime = pessimisticTimeInput.text.toString().toDouble()
+            }
+        } catch (e: NumberFormatException) {
+            Toast.makeText(
+                this@MainActivity,
+                "Set correct value",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 

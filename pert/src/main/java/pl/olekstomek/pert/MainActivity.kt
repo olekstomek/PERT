@@ -5,6 +5,7 @@ import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.AlertDialog
 import android.view.Menu
 import android.view.MenuItem
@@ -27,6 +28,19 @@ class MainActivity : AppCompatActivity() {
 
         val probability = Probability()
         val standardDeviation = StandardDeviation()
+
+        val shareFloatButton = findViewById<FloatingActionButton>(R.id.share)
+        shareFloatButton.setOnClickListener {
+            val sendIntent = Intent()
+            sendIntent.action = Intent.ACTION_SEND
+            sendIntent.putExtra(
+                Intent.EXTRA_TEXT,
+                "Download app PERT (Program Evaluation and Review Technique) from Google play: " +
+                        "https://play.google.com/store/apps/details?id=pl.olekstomek.pert"
+            )
+            sendIntent.type = "text/plain"
+            startActivity(sendIntent)
+        }
 
         setTextNumberOfSavedTasks()
         calculateButton.setOnClickListener {
@@ -83,29 +97,38 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
 
-        if (id == R.id.action_clear_all_fields) {
-            optimisticTimeInput.setText("")
-            normalTimeInput.setText("")
-            pessimisticTimeInput.setText("")
+        when (id) {
+            R.id.action_clear_all_fields -> {
+                optimisticTimeInput.setText("")
+                normalTimeInput.setText("")
+                pessimisticTimeInput.setText("")
 
-            Toast.makeText(
-                this@MainActivity,
-                "All fields cleaned",
-                Toast.LENGTH_SHORT
-            ).show()
+                Toast.makeText(
+                    this@MainActivity,
+                    "All fields cleaned",
+                    Toast.LENGTH_SHORT
+                ).show()
 
-            return true
-        }
-
-        if (id == R.id.action_open_github) {
-            startActivity(
-                Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse("https://github.com/olekstomek/PERT")
+                return true
+            }
+            R.id.action_open_github -> {
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("https://github.com/olekstomek/PERT")
+                    )
                 )
-            )
 
-            return true
+                return true
+            }
+            R.id.action_open_google_play -> {
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("https://play.google.com/store/apps/developer?id=nalesnik")
+                    )
+                )
+            }
         }
 
         return super.onOptionsItemSelected(item)

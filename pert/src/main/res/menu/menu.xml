@@ -6,7 +6,6 @@
             android:title="@string/clear_fields" />
     <item
             android:id="@+id/action_open_github"
-            android:icon="@drawable/ic_baseline_shop_24"
             android:title="@string/about_github" />
     <item
             android:id="@+id/action_open_google_play"

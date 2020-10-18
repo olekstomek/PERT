@@ -15,6 +15,7 @@
         android:layout_marginTop="64dp"
         android:layout_marginBottom="16dp"
         android:text="@string/optimistic_time"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/normalTimeText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,6 +27,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="64dp"
         android:text="@string/normal_time"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/optimisticTimeText"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,6 +40,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="64dp"
         android:text="@string/pessimistic_time"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/normalTimeText"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
